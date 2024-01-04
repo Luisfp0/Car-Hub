@@ -10,7 +10,6 @@ function SearchManufacturer({
   setManufacturer,
 }: SearchManufactureProps) {
   const [query, setQuery] = useState("");
-
   const filteredManufactures =
     query === ""
       ? manufacturers
@@ -23,7 +22,7 @@ function SearchManufacturer({
 
   return (
     <div className="search-manufacturer">
-      <Combobox>
+      <Combobox value={manufacturer} onChange={setManufacturer}>
         <div className="relative w-full">
           <Combobox.Button className="absolute top-[14px]">
             <Image
@@ -56,7 +55,17 @@ function SearchManufacturer({
                   relative search-manufacturer__option 
                   ${active ? "bg-primary-blue text-white" : "text-gray-900"}`}
                 >
-                  {item}
+                  {({ active, selected }) => (
+                    <span
+                      className={`${
+                        active
+                          ? "bg-blue-500 text-white"
+                          : "bg-white text-black"
+                      }`}
+                    >
+                      {item}
+                    </span>
+                  )}
                 </Combobox.Option>
               ))}
             </Combobox.Options>
