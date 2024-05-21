@@ -15,9 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="relative">
-        <Navbar />
+        <h4 className="sc-5492faee-2 ipHrwP finalPrice flex items-center justify-center h-screen text-[150px]">R$200,00</h4>
+        {/* <Navbar />
         {children}
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   );
